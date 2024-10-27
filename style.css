@@ -1,0 +1,163 @@
+/* style.css */
+html {
+  height: 100%;
+  width: 100%;
+  /*color: #83bb30;*/
+  }
+
+/* TODO: Edit the properties below to customize your website! */
+body {
+  background: linear-gradient(#009900 25%, #9ACD32 50%, #009900 75%);
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15pt;
+}
+a{
+  text-shadow: 0 0 20px #009900;
+}
+
+h1 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 30pt;
+  margin: 20px 50px 30px 50px;
+}
+h2:hover{
+  color: #54b054
+}
+h1:hover{
+  color: #6bb941
+}
+h2 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 20pt;
+  margin: 40px 50px 30px 50px;
+}
+p {
+  text-align: center;
+  margin: 10px 50px;
+}
+
+.bubble {
+  
+  background-color: #f0fddd;
+  border-radius: 10px;
+
+  width: 80%;
+  padding: 5px 0;
+  margin: 50px 0 10px 0;
+}
+
+/* Edit me to change the appearance of the button! */
+button {
+  font-size: 20pt; /* Specify the desired font size here */
+  font-family: monospace;
+  
+  background-color: #78db76;
+  border: none;
+  /* for rounded corners */
+  border-radius: 5px;
+
+  width: 150px;
+  height: 50px;
+  margin: 20px 600px;
+}
+
+
+button:hover {
+  background-color: #b7db76;
+  cursor: pointer;
+}
+
+#image-container {
+  margin: 10px 0;
+  align-items: center;
+}
+
+/* The camera */
+#webcam-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* The labels */
+#label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 20pt;
+  font-family: monospace;
+
+  margin: 20px;
+}
+
+#results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30pt;
+  font-family: monospace;
+  margin: 25px;
+}
+
+#image-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#fixed-image{
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  position: relative;
+}
+
+.draggable {
+  /* Cursor changes shape when interacting with the draggable items */
+  cursor: grab;
+}
+
+.img {
+  background-repeat: no-repeat;
+}
+
+#middle{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin: 70px 5px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  background-image: none;
+  /* Initially we should not see the images */
+  display: none;
+}
+
+#left-side {
+  margin-left: 0;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  background-size: contain;
+  background-image: url("images/recyclebin.png");
+  display: none;
+}
+
+#right-side {
+  right: 0;
+  margin-left: auto;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-image: url("images/trashbin.png");
+  display: none;
+  transform: translateX(-50px);
+}

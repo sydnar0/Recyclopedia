@@ -1,0 +1,97 @@
+<!-- index.html  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My Machine Learning Model</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div class="bubble">
+    <a><h1>Recyclable or Not</h1></a>
+    
+    <p>In this website, it will tell you what trash items are recyclable or on recyclable! If the classifyer classifys something as either carboard, paper, glass, plastic, or metal, the item is recyclable. If it considers it as trash, throw it in the trash!</p>
+    
+    <button type="button" onclick="init()">Press Me!</button>
+
+    <!-- Contains all the images that will be displayed later on -->
+    <div id ="image-container">
+        <!-- class = "fixed-image"...class="middle-image"-->
+        <div class="img" id="left-side" ondrop="drop(event, 'recycle')" ondragover="allowDrop(event)"></div>
+      <!-- Save the type of object as a data called data-label / label -->
+        <div class="img" id="middle" data-label="None" draggable="true" ondragstart="drag(event)" ondragover="allowDrop(event)"></div>
+        <div class="img" id="right-side" ondrop="drop(event, 'trash')" ondragover="allowDrop(event)"></div> 
+    </div>
+
+
+    
+    <div id="webcam-container"></div> <!-- Camera for testing data -->
+    <div id="label-container"></div> <!-- Show the predicted label -->
+    <div id="results-container"></div> <!-- For the results after a label has been identified -->
+
+    <!-- Load all audios -->
+    <audio id="click" src="sounds/click.wav"></audio>
+    <audio id="yay" src="sounds/Blip.wav"></audio>
+    <audio id="wrong" src="sounds/Wrong.wav"></audio>
+    
+  </div>  <!-- end of the first div bubble -->
+
+  <div class="bubble">
+    <h1>About the Creators</h1>
+    <p>The purpose of this website is to prevent people from placing items that could be recyclable if people knew that you have to clean certain products before you recycle them, or that you need to recycle items seperatly if it's something like a plastic container. Since a lot of people aren't aware of these recycling rules, only 5-6% of items taht are recyled each year are actually able to be recycled. </p>
+  </div>
+
+  <div class="bubble">
+    <h1>More Info!</h1>
+    <h2>Why is recycling important</h2>
+     <p>Recycling is important because it reduces the amount of waste that ends up in landfills. It also reduces the amount of energy and resources to make new products.</p>
+  <h2>Facts</h2>
+    <ul>
+    <li><p>Each ton (2,000 pounds) of recycled paper can save 17 trees</p></li>
+    <li><p>Plastic waste can take anywhere from 20 to 500 years to decompose, but it never really goes away</p></li>
+    <li><p>Recycling one aluminum can saves enough energy to run a 55-inch HDTV to watch your favorite movie</p></li>
+    </ul>
+     <p></p>
+
+  </div>
+  
+  <div class="bubble">
+
+  <h1>Recyclables:</h1> 
+  <p>Plastic bottles and containers</p> 
+  <p>Tin, aluminum and steel cans</p>
+  <p>Paper, newspaper and magazines</p>
+  <p>Flattened Cardboard and paperboard</p>
+  <br>
+  <p>Recycling for cartons vary</p>
+  <p>Recycling for glass vary</p>
+
+  <h1>Must do's to recycle:</h1>
+  <ul>
+  <p>Rinse and clean food and liquid from or in recyclables</p>
+  <p>Dry the recyclables</p>
+  <p>No loose plastic bags and no bagged recyclables</p>
+  </ul>
+  
+  <h1>Non-recyclables:</h1> 
+  <p>Food/liquids</p>
+  <p>Foam cups or containers</p> 
+  <p>Plastic bags, remove recyclable items from its bag</p>
+  <p>Batteries</p>
+  <p>Medical sharps or needles can be recycled</p> 
+  <p>Hazardous material like paint or combustibles</p> 
+    </div>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
